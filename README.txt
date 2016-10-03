@@ -1,6 +1,5 @@
-DOCUMENT ANALYSIS COMP4650/6490
-INFORMATION EXTRACTION ASSIGNMENT
-Assigment: Named Entity Recognition (NER) using CRF++
+INFORMATION EXTRACTION
+Named Entity Recognition (NER) using CRF++
 ________________________________________________________
 
 
@@ -24,7 +23,7 @@ ________________________________________________________
 Spanish Named Entity Recognition (NER) using CRF++
 ________________________________________________________
 
-1. Installed CRF++ following the instructions found in the CRF++/doc folder. If you want to install CRF++ in the lab computers or W$ndows, please, see instructions below.
+1. Install CRF++ following the instructions found in the CRF++/doc folder. If you want to install CRF++ in the lab computers or W$ndows, please, see instructions below.
 
 2. Built a feature template file for the CRF++ tool. For an example see ~/examples/template-example file
 
@@ -35,8 +34,10 @@ ________________________________________________________
 5. Evaluate the performance of the classifier using the conll-eval.pl (you can find an example of the command to run the script in the script itself)
 
 6. Repeat steps 2,3,4 and 5 until you have a decent performance (more than 70 f-score for each entity class, except for the MISC class). 
-   Use the 'esp.testa' file as development set, thus to tune your classifier.
-   You will demostrate the best performance you can get in the grading lab by runnning the conll-eval.pl script with the 'esp.testb' file 
+   
+Use the 'esp.testa' file as development set, thus to tune your classifier.
+   
+You will demonstrate the best performance you can get in the grading lab by runnning the conll-eval.pl script with the 'esp.testb' file 
 
 7. Write a Java NER application that uses your best classifier from step 6. Prepare your application to be test by a new test set (row/plain text), that will be provided in the grading lab. Your application should use the code available to built and NLP pipeline that reads row/plain input text > split the sentences > tokenized the text > get the POS-tags (you can use the NLP code and the Spanish POS-tagger model in the \textit{Information Extraction - Lab & Assignment resources IE-Lab:NLPTools} posted to Wattle). 
 
@@ -72,15 +73,6 @@ export PATH="path where you have downloaded CRF++(for example ~/Downloads/IE-Lab
 9. source .profile
 
 Now crf_learn and crf_test commands should be working from terminal.
-
-Hope it Helps 
-Swapnil
-
-________________________________________________________
-Installing the CRF++ on W$ndows
-________________________________________________________
-If you are using W$ndows on your laptops, you can't make (compile) CRF++. 
-Please use this pre-built binaries in ~/IE-Lab/crf++_binaries-windows.zip
 
 
 
