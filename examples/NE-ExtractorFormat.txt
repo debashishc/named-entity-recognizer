@@ -1,0 +1,14 @@
+Location
+	La Coruña	3		
+	España		1
+
+Organization
+	EFECOM		1
+	Internet	2
+
+Person:
+	Iñigo García Aranda	1
+	Savia Amadeus		1
+
+...
+
