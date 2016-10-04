@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/twitter4j-stream-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/lucene-core-2.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/trove.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/opennlp-0.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/lingpipe-3.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/jaws-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/stanford-parser-2008-10-26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/nekohtml-1.9.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/jwnl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/hsqldb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/junit-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/opennlp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/maxent-2.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/twitter4j-media-support-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/opencsv-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/twitter4j-async-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/jwpl_v05b.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/snowball_stemmer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/twitter4j-core-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/openNLPtools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

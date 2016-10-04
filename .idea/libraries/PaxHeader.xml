@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="PaxHeader">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/twitter4j-stream-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/hsqldb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/twitter4j-core-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/lingpipe-3.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/jwpl_v05b.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/opennlp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/opennlp-0.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/openNLPtools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/lucene-core-2.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/trove.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/twitter4j-async-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/jaws-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/opencsv-2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/stanford-parser-2008-10-26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/xml-apis.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/twitter4j-media-support-2.2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/jwnl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/junit-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/maxent-2.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/nekohtml-1.9.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/NLPTools/lib/PaxHeader/snowball_stemmer.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

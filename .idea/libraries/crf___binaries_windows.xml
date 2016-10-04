@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="crf++_binaries-windows">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/PaxHeader/crf++_binaries-windows.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
