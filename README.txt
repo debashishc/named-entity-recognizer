@@ -39,7 +39,7 @@ Use the 'esp.testa' file as development set, thus to tune your classifier.
    
 You will demonstrate the best performance you can get in the grading lab by runnning the conll-eval.pl script with the 'esp.testb' file 
 
-7. Write a Java NER application that uses your best classifier from step 6. Prepare your application to be test by a new test set (row/plain text), that will be provided in the grading lab. Your application should use the code available to built and NLP pipeline that reads row/plain input text > split the sentences > tokenized the text > get the POS-tags (you can use the NLP code and the Spanish POS-tagger model in the \textit{Information Extraction - Lab & Assignment resources IE-Lab:NLPTools} posted to Wattle). 
+7. Write a Java NER application that uses your best classifier from step 6. Prepare your application to be test by a new test set (row/plain text), that will be provided in the grading lab. Your application should use the code available to built and NLP pipeline that reads row/plain input text > split the sentences > tokenize the text > get the POS-tags (you can use the NLP code and the Spanish POS-tagger model in the \textit{Information Extraction - Lab & Assignment resources IE-Lab:NLPTools} posted to Wattle). 
 
 8. Your NER application must include a NE extractor that display the recognized entities in the one NE per line, organized by named entities categories, and display the frequency of each entity found (see the example/NE-ExtractorFormat.txt file) 
 
