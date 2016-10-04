@@ -8,20 +8,20 @@
 
 package nlp.opennlp;
 
+import opennlp.tools.coref.DiscourseEntity;
+import opennlp.tools.lang.english.Tokenizer;
+import opennlp.tools.lang.english.TreebankParser;
+import opennlp.tools.parser.AbstractBottomUpParser;
+import opennlp.tools.parser.Parse;
+import opennlp.tools.sentdetect.SentenceDetectorME;
+import opennlp.tools.util.Span;
+
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import opennlp.tools.coref.DiscourseEntity;
-import opennlp.tools.coref.mention.Mention;
-import opennlp.tools.lang.english.Tokenizer;
-import opennlp.tools.lang.english.TreebankParser;
-import opennlp.tools.parser.*;
-import opennlp.tools.sentdetect.SentenceDetectorME;
-import opennlp.tools.util.Span;
 
 public class Parser {
 	
@@ -38,17 +38,17 @@ public class Parser {
 		// Load models for Sentence Detector
 		System.out.println("Loading model for Sentence Detector...");
 		_sdetector = new SharedSentenceDetector(
-				"./models/sentdetect/EnglishSD.bin.gz");
+				"./NLPTools/models/sentdetect/EnglishSD.bin.gz");
 
 		// Load models for Tokenizer
 		System.out.println("Loading model for Tokenizer...");
 		_tokenizer = new Tokenizer(
-				"./models/tokenize/EnglishTok.bin.gz");
+				"./NLPTools/models/tokenize/EnglishTok.bin.gz");
 		
 		// Load the Parser
 		System.out.println("Loading model for Parser...");
 		_parser = (AbstractBottomUpParser) TreebankParser.getParser(
-				"./models/parser", /*useTagDict*/false, 
+				"./NLPTools/models/parser", /*useTagDict*/false,
 				/*useCaseInsensitiveTagDict*/false, 
 				/*beamSize*/AbstractBottomUpParser.defaultBeamSize, 
 				/*advancePercentage*/AbstractBottomUpParser.defaultAdvancePercentage);

@@ -8,9 +8,10 @@
 
 package nlp.opennlp;
 
-import java.io.IOException;
 import opennlp.tools.lang.english.Tokenizer;
 import opennlp.tools.sentdetect.SentenceDetectorME;
+
+import java.io.IOException;
 
 public class SentenceTokenizer {
 	
@@ -23,12 +24,12 @@ public class SentenceTokenizer {
 		// Load models for Sentence Detector
 		System.out.println("Loading models for Sentence Detector...");
 		_sdetector = new SharedSentenceDetector(
-				"./models/sentdetect/EnglishSD.bin.gz");
+				"./NLPTools/models/sentdetect/EnglishSD.bin.gz");
 
 		// Load models for Tokenizer
 		System.out.println("Loading models for Tokenizer...");
 		_tokenizer = new Tokenizer(
-				"./models/tokenize/EnglishTok.bin.gz");
+				"./NLPTools/models/tokenize/EnglishTok.bin.gz");
 	}
 
 	// Return String representation of tokens

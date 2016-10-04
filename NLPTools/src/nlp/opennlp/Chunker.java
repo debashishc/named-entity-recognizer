@@ -8,21 +8,17 @@
 
 package nlp.opennlp;
 
-import java.io.File;
-import java.io.IOException;
-
 import opennlp.maxent.io.SuffixSensitiveGISModelReader;
-import opennlp.tools.lang.english.Tokenizer;
-import opennlp.tools.sentdetect.SentenceDetectorME;
-
-import java.util.ArrayList;
-import opennlp.tools.parser.AbstractBottomUpParser;
 import opennlp.tools.chunker.ChunkerME;
 import opennlp.tools.dictionary.Dictionary;
+import opennlp.tools.lang.english.Tokenizer;
 import opennlp.tools.postag.POSTaggerME;
-import opennlp.tools.util.InvalidFormatException;
-
+import opennlp.tools.sentdetect.SentenceDetectorME;
 import util.Pair;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class Chunker {
 	
@@ -36,23 +32,23 @@ public class Chunker {
 		// Load models for Sentence Detector
 		System.out.println("Loading models for Sentence Detector...");
 		_sdetector = new SharedSentenceDetector(
-				"./models/sentdetect/EnglishSD.bin.gz");
+				"./NLPTools/models/sentdetect/EnglishSD.bin.gz");
 
 		// Load models for Tokenizer
 		System.out.println("Loading models for Tokenizer...");
 		_tokenizer = new Tokenizer(
-				"./models/tokenize/EnglishTok.bin.gz");
+				"./NLPTools/models/tokenize/EnglishTok.bin.gz");
 
 		// Load models for POS tagging
 		System.out.println("Loading models for POS Tagging...");
 		_tagger = new SharedPOSTagger(
-				"./models/postag/tag.bin.gz", (Dictionary) null);
+				"./NLPTools/models/postag/tag.bin.gz", (Dictionary) null);
 		
 		// Load models for Chunking
 		System.out.println("Loading models for Chunking...");
 		_chunker = new ChunkerME( 
 				new SuffixSensitiveGISModelReader(
-						new File("./models/chunker/EnglishChunk.bin.gz")).getModel());
+						new File("./NLPTools/models/chunker/EnglishChunk.bin.gz")).getModel());
 
 	}
 

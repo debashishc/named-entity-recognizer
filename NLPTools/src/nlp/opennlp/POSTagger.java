@@ -8,12 +8,12 @@
 
 package nlp.opennlp;
 
-import java.io.IOException;
+import opennlp.tools.dictionary.Dictionary;
 import opennlp.tools.lang.english.Tokenizer;
+import opennlp.tools.postag.POSTaggerME;
 import opennlp.tools.sentdetect.SentenceDetectorME;
 
-import opennlp.tools.dictionary.Dictionary;
-import opennlp.tools.postag.POSTaggerME;
+import java.io.IOException;
 
 public class POSTagger {
 	
@@ -27,17 +27,17 @@ public class POSTagger {
 		// Load models for Sentence Detector
 		System.out.println("Loading models for Sentence Detector...");
 		_sdetector = new SharedSentenceDetector(
-				"/IE-Lab/NLPTools/models/sentdetect/EnglishSD.bin.gz");
+				"./NLPTools/models/sentdetect/EnglishSD.bin.gz");
 
 		// Load models for Tokenizer
 		System.out.println("Loading models for Tokenizer...");
 		_tokenizer = new Tokenizer(
-				"/IE-Lab/NLPTools/models/tokenize/EnglishTok.bin.gz");
+				"./NLPTools/models/tokenize/EnglishTok.bin.gz");
 
 		// Load models for POS tagging
 		System.out.println("Loading models for POS Tagging...");
 		_tagger = new SharedPOSTagger(
-				"/IE-Lab/NLPTools/models/postag/SpanishPOS.bin.gz", (Dictionary) null);
+				"./NLPTools/models/postag/SpanishPOS.bin.gz", (Dictionary) null);
 	}
 
 	// Return value for POSTagging

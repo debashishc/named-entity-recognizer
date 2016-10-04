@@ -8,9 +8,9 @@
 
 package nlp.opennlp;
 
-import java.io.IOException;
 import opennlp.tools.sentdetect.SentenceDetectorME;
-import opennlp.tools.util.InvalidFormatException;
+
+import java.io.IOException;
 
 public class SentenceExtractor {
 	
@@ -22,7 +22,7 @@ public class SentenceExtractor {
 		// Load models for Sentence Detector
 		System.out.println("Loading models for Sentence Detector...");
 		_sdetector = new SharedSentenceDetector(
-				"./models/sentdetect/EnglishSD.bin.gz");
+				"./NLPTools/models/sentdetect/EnglishSD.bin.gz");
 	}
 
 	// Return String representation of sentences
