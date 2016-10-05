@@ -7,6 +7,14 @@ import java.io.*;
  */
 public class TestLabeler {
 
+
+    /**
+     * Reads the content of the file and returns a string object containing the body of the text
+     *
+     * @param inputPath input file path
+     * @return the text of the file
+     * @throws IOException
+     */
     public static String readFile(String inputPath) throws IOException {
 
         File file = new File(inputPath);
@@ -20,15 +28,24 @@ public class TestLabeler {
             }
 
             bufferedReader.close();
+        } catch (IOException ie){
+            System.out.println("The specified file cannot be found.");
         }
 
         return body;
     }
 
+    /**
+     * Perform POSTagging on text and label each token with a POS
+     *
+     * @param text a string object containing text (of a file)
+     * @return a part of speech tagging object containing the tokens and respective taggings
+     * @throws IOException
+     */
     public static POSTagger.POSTagging tagText(String text) throws IOException {
 
         POSTagger posTagger = new POSTagger();
-        POSTagger.POSTagging posTagging = posTagger.process(text, 3);
+        POSTagger.POSTagging posTagging = posTagger.process(text, 1);
 
         return posTagging;
     }
@@ -45,27 +62,24 @@ public class TestLabeler {
             for (int si = 0; si < _taggings.length; si++) {
                 for (int ti = 0; ti < _taggings[si].length; ti++) {
                     for (int wi = 0; wi < _taggings[si][ti].length; wi++) {
-                        bufferedWriter.write(_tokens[si][wi] + "\t");
-                        bufferedWriter.write(_taggings[si][ti][wi] + "\t" + "O" + "\n");
+                        bufferedWriter.write(_tokens[si][wi] + "\t\t");
+                        bufferedWriter.write(_taggings[si][ti][wi] + "\t\t" + "O" + "\n");
                     }
                 }
                 bufferedWriter.write("\n");
             }
 
         bufferedWriter.close();
-
     }
-
 
 
     public static void main(String[] args) throws IOException {
 
-        String inputPath = "./test.txt";
+        String inputPath = "./test.tx";
         // todo: change it to ".test" file before testing later
         String outputPath = "./labeled_test.txt";
 
 //        System.out.println(new File(".").getCanonicalPath());
-
 
         String body = readFile(inputPath);
         POSTagger.POSTagging posTagging = tagText(body);
@@ -73,6 +87,5 @@ public class TestLabeler {
 
 
     }
-
 
 }
