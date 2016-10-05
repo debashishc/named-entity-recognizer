@@ -2,6 +2,7 @@
   <dictionary name="dc">
     <words>
       <w>chunker</w>
+      <w>taggings</w>
     </words>
   </dictionary>
 </component>
