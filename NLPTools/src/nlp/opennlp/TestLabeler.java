@@ -61,8 +61,8 @@ public class TestLabeler {
 
     public static void main(String[] args) throws IOException {
 
-        String inputPath = "";
-        String outputPath = "";
+        String inputPath = "test.txt";
+        String outputPath = "labeled_test.txt";
 
         String body = readFile(inputPath);
         POSTagger.POSTagging posTagging = tagText(body);
