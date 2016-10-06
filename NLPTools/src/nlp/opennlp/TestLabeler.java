@@ -75,7 +75,7 @@ public class TestLabeler {
 
     public static void main(String[] args) throws IOException {
 
-        String inputPath = "./test.tx";
+        String inputPath = "./test.txt";
         // todo: change it to ".test" file before testing later
         String outputPath = "./labeled_test.txt";
 
