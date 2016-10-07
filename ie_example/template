@@ -1,0 +1,28 @@
+#unigram
+#word
+U0:%x[0,0]
+#part of speech
+U1:%x[0,1]
+#entity type, 0 for nothing
+U2:%x[0,2]
+# type of page found on (A or B)
+U3:%x[0,3]
+
+# word/part_of_speech
+U4:%x[0,0]/%x[0,1]
+
+#prev POS / POS
+U5:%x[-1,1]/%x[0,1]
+
+#window of words
+#previous word
+U6:%x[-1,0]
+#word before last
+U7:%x[-2,0]
+
+#next two words
+U8:%x[1,0]
+U9:%x[2,0]
+
+#Automatically create all bigram features
+B
