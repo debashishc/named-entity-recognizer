@@ -32,13 +32,13 @@ U07:%x[1,1]
 #####################################################
 
 #chunk tag, 0 for nothing
-U08:%x[0,2]
+#U08:%x[0,2]
 
 #previous chunk
-U09:%x[-1,2]
+#U09:%x[-1,2]
 
 #next chunk
-U10:%x[1,2]
+#U10:%x[1,2]
 
 #####################################################
 
@@ -55,10 +55,10 @@ U09:%x[-1,1]/%x[0,1]
 
 
 # prev word/word/next word
-U:%x[-1,0]/%x[0,0]/%x[1,0]
+U10:%x[-1,0]/%x[0,0]/%x[1,0]
 
 # prev POS/POS/next POS
-U:%x[-1,1]/%x[0,1]/%x[1,1]
+U11:%x[-1,1]/%x[0,1]/%x[1,1]
 
 
 #bigram - automatically create all bigram features
