@@ -1,0 +1,8 @@
+# From the documentation:
+Each line in the template file denotes one template. In each template, 
+ - special macro %x[row, col] will be used to specify a token in the input data. 
+ 		-	row specifies the relative position from the current focusing token 
+ 		-	col specifies the absolute position of the column.
+
+
+The template file sets out which features to use during a run of the CRF. 

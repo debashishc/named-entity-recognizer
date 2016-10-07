@@ -1,0 +1,65 @@
+# unigram features
+
+#####################################################
+### WINDOW OF WORDS
+
+# word before previous word
+U00:%x[-2,0]
+
+# previous word
+U01:%x[-1,0]
+
+# current word
+U02:%x[0,0]
+
+# next word
+U03:%x[1,0]
+
+# word after next word
+U04:%x[2,0]
+
+#####################################################
+
+#part_of_speech
+U05:%x[0,1]
+
+# previos part_of_speech
+U06:%x[-1,1]
+
+# next part_of_speech
+U07:%x[1,1]
+
+#####################################################
+
+#chunk tag, 0 for nothing
+U08:%x[0,2]
+
+#previous chunk
+U09:%x[-1,2]
+
+#next chunk
+U10:%x[1,2]
+
+#####################################################
+
+# prev word/ word
+U07:%x[-1,0]/%x[0,0]
+
+# word/part_of_speech
+U08:%x[0,0]/%x[1,0]
+
+#prev POS / POS
+U09:%x[-1,1]/%x[0,1]
+
+#####################################################
+
+
+# prev word/word/next word
+U:%x[-1,0]/%x[0,0]/%x[1,0]
+
+# prev POS/POS/next POS
+U:%x[-1,1]/%x[0,1]/%x[1,1]
+
+
+#bigram - automatically create all bigram features
+B
