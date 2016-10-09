@@ -6,3 +6,30 @@ Each line in the template file denotes one template. In each template,
 
 
 The template file sets out which features to use during a run of the CRF. 
+
+
+# c-value of 1
+
+processed 46167 tokens with 3076 phrases; found: 2924 phrases; correct: 2209.
+accuracy:  96.80%; precision:  75.55%; recall:  71.81%; FB1:  73.63
+              LOC: precision:  78.42%; recall:  71.15%; FB1:  74.60  871
+             MISC: precision:  63.46%; recall:  37.93%; FB1:  47.48  156
+              ORG: precision:  74.06%; recall:  77.40%; FB1:  75.69  1276
+              PER: precision:  77.62%; recall:  76.03%; FB1:  76.81  621
+
+
+# c-value of 1.5
+processed 46167 tokens with 3076 phrases; found: 2926 phrases; correct: 2210.
+accuracy:  96.78%; precision:  75.53%; recall:  71.85%; FB1:  73.64
+              LOC: precision:  78.48%; recall:  71.04%; FB1:  74.58  869
+             MISC: precision:  62.35%; recall:  38.70%; FB1:  47.75  162
+              ORG: precision:  74.09%; recall:  77.07%; FB1:  75.55  1270
+              PER: precision:  77.76%; recall:  76.66%; FB1:  77.20  625
+
+# c-value of 2.5
+processed 46167 tokens with 3076 phrases; found: 2930 phrases; correct: 2208.
+accuracy:  96.76%; precision:  75.36%; recall:  71.78%; FB1:  73.53
+              LOC: precision:  78.59%; recall:  70.73%; FB1:  74.45  864
+             MISC: precision:  61.45%; recall:  39.08%; FB1:  47.78  166
+              ORG: precision:  74.08%; recall:  77.23%; FB1:  75.62  1273
+              PER: precision:  77.19%; recall:  76.34%; FB1:  76.76  627

@@ -14,6 +14,8 @@ public class TestLabeler {
      * @param inputPath input file path
      * @return the text of the file
      * @throws IOException
+     *
+     * @version 1.0
      */
     public static String readFile(String inputPath) throws IOException {
 
@@ -56,6 +58,8 @@ public class TestLabeler {
 
         String[/*sent*/][/*word*/] _tokens = posTagging._tokens;
         String[/*sent*/][/*tag*/][/*word*/] _taggings = posTagging._taggings;
+//        ArrayList<ArrayList<ArrayList<String>>> chunkLabels = chunkedData._chunkLabels;
+
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(outputFile, false));
 
@@ -75,15 +79,17 @@ public class TestLabeler {
 
     public static void main(String[] args) throws IOException {
 
-        String inputPath = "./test.txt";
+        String inputPath = "./test_files/testSet.txt";
         // todo: change it to ".test" file before testing later
-        String outputPath = "./labeled_test.txt";
+        String outputPath = "./test_files/labeled_test.txt";
 
 //        System.out.println(new File(".").getCanonicalPath());
 
         String body = readFile(inputPath);
         POSTagger.POSTagging posTagging = tagText(body);
         writeFile(posTagging, outputPath);
+
+
 
 
     }

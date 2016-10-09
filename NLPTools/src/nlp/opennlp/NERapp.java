@@ -3,66 +3,110 @@ package nlp.opennlp;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 /**
  * @author Debashish Chakraborty
+ *
+ * @version 1.0
  */
 public class NERapp {
-
-//    public static void function(){
-//
-//
-//
-//    }
-//
-//
-//
-//
-//    public static void main(String[] args) {
-//
-//        String inputPath = "./test.txt";
-//        // todo: change it to ".test" file before testing later
-//        String outputPath = "./labeled_test.txt";
-//
-//        TestLabeler testLabeler = new TestLabeler();
-//        try {
-//            testLabeler.readFile("");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
-
-    private static final String OUTPUT_PATH = "./NER_result.txt";
-    private static final String INPUT_PATH = "./labeled_test.txt";
 
     static HashMap<String, Integer> loc = new HashMap<String, Integer>();
     static HashMap<String, Integer> org = new HashMap<String, Integer>();
     static HashMap<String, Integer> per = new HashMap<String, Integer>();
     static HashMap<String, Integer> misc = new HashMap<String, Integer>();
 
+
+    // Extract word and corresponding tag and assign to required dictionary
+    public static void editResultText(String string) {
+
+        Scanner scanner = new Scanner(string);
+        String word = "";
+        String tag = "";
+
+        while (scanner.hasNextLine()) {
+            String[] strings = scanner.nextLine().split("\t"); // split  on tab
+            word = strings[0]; // read the word
+            tag = strings[3]; // read the tag
+        }
+
+        scanner.close();
+
+
+        if (tag.toUpperCase().endsWith("ORG"))
+            hash(word, org);
+        else if (tag.toUpperCase().endsWith("LOC"))
+            hash(word, loc);
+        else if (tag.toUpperCase().endsWith("PER"))
+            hash(word, per);
+        else if (tag.toUpperCase().endsWith("MISC"))
+            hash(word, misc);
+
+    }
+
+    // initiate the count if the word is not there, otherwise increase the count by one
+    public static void hash(String word, HashMap<String, Integer> hashMap) {
+        if (hashMap.containsKey(word)) {
+            hashMap.put(word, hashMap.get(word) + 1);
+        } else {
+            hashMap.put(word, 1);
+        }
+
+    }
+
+    private static void display(String s, HashMap<String, Integer> hm, BufferedWriter bw) throws IOException {
+        bw.write(s + "\n");
+        for (Map.Entry<String, Integer> entry : hm.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue().toString();
+            bw.write("\t" + key + "\t" + value + "\n");
+        }
+        bw.write("\n");
+    }
+
+
+    public static void read_print(String inputPath) {
+        File file = new File(inputPath);
+        String body = "";
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            String line = bufferedReader.readLine();
+
+            while (line != null) {
+                editResultText(line);
+                line = bufferedReader.readLine();
+            }
+
+            bufferedReader.close();
+
+        } catch (IOException ie) {
+            System.out.println("The specified file cannot be found.");
+        }
+
+    }
+
+
     public static void main(String[] args) throws IOException {
 
+        String inputPath = "./predicted2.txt";
+        // todo: change it to ".test" file before testing later
+        String outputPath = "./NER_result.txt";
 
-        File inf = new File(INPUT_PATH);
-        BufferedReader br = new BufferedReader(new FileReader(inf));
-        File outf = new File(OUTPUT_PATH);
+        File outf = new File(outputPath);
         BufferedWriter bw = new BufferedWriter(new FileWriter(outf));
+//        TestLabeler testLabeler = new TestLabeler();
+//        try {
+//            testLabeler.readFile("");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-        // read from a file
-        String s = br.readLine();
-        while (s != null) {
-            process(s);
-            s = br.readLine();
-        }
-        br.close();
 
-        System.out.println(loc);
-        System.out.println(org);
-        System.out.println(per);
-        System.out.println(misc);
+//        String body = TestLabeler.readFile(inputPath);
 
+//        editResultText("La\tDA\tB-LOC\tB-LOC\n" );
+
+        read_print(inputPath);
 
         display("Location", loc, bw);
         display("Organization", org, bw);
@@ -70,63 +114,8 @@ public class NERapp {
         display("Misc", misc, bw);
 
         bw.close();
-    }
-
-    // write the result in required format
-    private static void display(String s, HashMap<String, Integer> hm, BufferedWriter bw) throws IOException {
-        bw.write(s + "\n");
-        for (Map.Entry<String, Integer> entry : hm.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue().toString();
-            bw.write("\t" + key + "\t" + value + "\n");
-            //System.out.println(key + "\t" + value);
-        }
-        bw.write("\n");
-    }
-
-    // process the results of crf_test to hash maps of different entity categories
-    private static void process(String s) {
-        StringTokenizer st = new StringTokenizer(s);
-        int i = 0;
-        String word = "";
-        String tag = "";
-        while (st.hasMoreTokens()) {
-            i++;
-            //System.out.println(i);
-            if (i == 1) {
-                word = st.nextToken();
-            } else if (i == 4) {
-                tag = st.nextToken();
-            } else {
-                st.nextToken();
-            }
-        }
-        //System.out.println(word + "\t" + tag);
-        int index = tag.indexOf("-");
-        //System.out.println("index :"+ index);
-        if (index != -1) {
-            tag = tag.substring(index+1, tag.length());
-            //System.out.println(tag);
-        }
-
-        if (tag.equals("ORG")) {
-            put_to_hashmap(word, org);
-        } else if (tag.equals("LOC")) {
-            put_to_hashmap(word, loc);
-        } else if (tag.equals("PER")) {
-            put_to_hashmap(word, per);
-        } else if (tag.equals("MISC")) {
-            put_to_hashmap(word,misc);
-        }
-    }
-
-    private static void put_to_hashmap(String word,
-                                       HashMap<String, Integer> hm) {
-        if (hm.containsKey(word)) {
-            hm.put(word, hm.get(word)+1);
-        } else {
-            hm.put(word, 1);
-        }
 
     }
+
+
 }

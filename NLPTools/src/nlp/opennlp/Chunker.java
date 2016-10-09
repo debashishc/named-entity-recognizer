@@ -41,8 +41,9 @@ public class Chunker {
 
 		// Load models for POS tagging
 		System.out.println("Loading models for POS Tagging...");
-		_tagger = new SharedPOSTagger(
-				"./NLPTools/models/postag/tag.bin.gz", (Dictionary) null);
+//		_tagger = new SharedPOSTagger(
+//				"./NLPTools/models/postag/tag.bin.gz", (Dictionary) null);
+		_tagger = new SharedPOSTagger("./NLPTools/models/postag/SpanishPOS.bin.gz", (Dictionary) null);
 		
 		// Load models for Chunking
 		System.out.println("Loading models for Chunking...");
