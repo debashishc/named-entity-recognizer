@@ -9,47 +9,8 @@ import java.util.*;
  */
 public class NER_extractor {
 
-    public static String outputPath = "./test_files/final.txt";
 
-//    public static ArrayList<TemplateRow> loadData(String filepath) {
-//        ArrayList<TemplateRow> elementList = new ArrayList<>();
-//
-//        BufferedReader bufferedReader = null;
-//        try {
-//            bufferedReader = new BufferedReader(new FileReader(filepath));
-//            String line;
-//            while ((line = bufferedReader.readLine()) != null) {
-//                String[] strings = line.split("\t");
-//
-//                // Felipe	NC	B-PER	B-PER
-//                if (strings.length != 4)
-//                    continue;
-//
-//
-//
-//                String word = strings[0];
-//                String tag = strings[1];
-//                String predicted_chunk = strings[3];
-//
-//                TemplateRow element = new TemplateRow(word, tag);
-//                element.setChunk(predicted_chunk);
-//
-//                elementList.add(element);
-//                //System.out.println(linearr[0] + " " + linearr[1] + " " + linearr[2]);
-//
-//                bufferedReader.close();
-//        }
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//        return elementList;
-//    }
-
-    public static ArrayList<TemplateRow> load_data(String inputPath) {
+    private static ArrayList<TemplateRow> load_data(String inputPath) {
         File file = new File(inputPath);
         ArrayList<TemplateRow> elementList = new ArrayList<>();
 
@@ -58,13 +19,11 @@ public class NER_extractor {
 
             while (line != null) {
                 Scanner scanner = new Scanner(line);
-                String word = "";
-                String tag = "";
 
                 while (scanner.hasNextLine()) {
                     String[] strings = scanner.nextLine().split("\t"); // split  on tab
-                    word = strings[0]; // read the word
-                    tag = strings[3]; // read the tag
+                    String word = strings[0]; // read the word
+                    String tag = strings[3]; // read the tag
 
                     String predicted_chunk = strings[3];
 
@@ -88,54 +47,45 @@ public class NER_extractor {
 
     }
 
-    public static ArrayList<TemplateRow> createElementList(Chunker.Chunking chunkedData) {
+    private static ArrayList<TemplateRow> createRowList(Chunker.Chunking chunkedData) {
 
-        ArrayList<TemplateRow> elementList = new ArrayList<>();
+        ArrayList<TemplateRow> rowArrayList = new ArrayList<>();
 
         String[][] tokens = chunkedData._tokens;
         String[][][] taggings = chunkedData._taggings;
         ArrayList<ArrayList<ArrayList<String>>> chunkLabels = chunkedData._chunkLabels;
 
-        // Adding word, tag to object Element
+        // Adding word and its corresponding tag tag to each row
         for (int si = 0; si < tokens.length; si++) {
             String[] sentence = tokens[si];
             for (int wi = 0; wi < sentence.length; wi++) {
                 String word = sentence[wi];
                 if (!word.equals(".")) {
                     String tag = taggings[si][0][wi];
-                    TemplateRow element = new TemplateRow(word, tag);
-                    elementList.add(element);
+                    TemplateRow row = new TemplateRow(word, tag);
+                    rowArrayList.add(row);
                 }
 
             }
         }
 
-        // Adding chunklable to object Element
+        // Adding chunkable to row
         int elementIndex = 0;
         for (ArrayList<ArrayList<String>> chunkSentence : chunkLabels) {
-            //System.out.println(chunkSentence);
             for (ArrayList<String> chunkWordGroup : chunkSentence) {
                 for (String chunk : chunkWordGroup) {
-                    //System.out.println(chunk);
-                    TemplateRow element = elementList.get(elementIndex);
+                    TemplateRow element = rowArrayList.get(elementIndex);
                     element.setChunk(chunk);
                     elementIndex++;
                 }
             }
-            //System.out.println();
         }
 
-        // Uncomment to print out the elements
-        /*for (Element element : elementList)
-		{
-			System.out.println(element.word + " " + element.tag + " " + element.chunk);
-		}
-		*/
-        return elementList;
+        return rowArrayList;
 
     }
 
-    public static void writeToFile(ArrayList<TemplateRow> elementList, String filepath) throws IOException {
+    private static void writeToFile(ArrayList<TemplateRow> elementList, String filepath) throws IOException {
         PrintWriter pw = new PrintWriter(filepath);
         for (TemplateRow element : elementList) {
             pw.println(element.word + "\t" + element.tag + "\t" + element.chunk);
@@ -144,22 +94,21 @@ public class NER_extractor {
 
     }
 
-    public static void printMap(Map<String, Integer> map) {
+    private static void printTreeMap(Map<String, Integer> map, PrintWriter pw) {
 
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + "\t" + entry.getValue());
+            pw.println("\t" + entry.getKey() + " : " + entry.getValue());
         }
 
     }
 
-    @SuppressWarnings("unchecked")
-    public static void clusterTemplateRows(ArrayList<TemplateRow> elementList) throws FileNotFoundException {
+    private static void clusterTemplateRows(ArrayList<TemplateRow> rowArrayListList) throws FileNotFoundException {
         ArrayList<String> perList = new ArrayList<>();
         ArrayList<String> locList = new ArrayList<>();
         ArrayList<String> orgList = new ArrayList<>();
 
-        for (int i = 0; i < elementList.size(); i++) {
-            TemplateRow rootTemplateRow = elementList.get(i);
+        for (int i = 0; i < rowArrayListList.size(); i++) {
+            TemplateRow rootTemplateRow = rowArrayListList.get(i);
             String rootWord = rootTemplateRow.getWord();
             String rootChunk = rootTemplateRow.getChunk();
 
@@ -170,7 +119,7 @@ public class NER_extractor {
 
                 while (true) {
                     ci++;
-                    TemplateRow element = elementList.get(ci);
+                    TemplateRow element = rowArrayListList.get(ci);
                     String chunk = element.getChunk();
                     if (chunk.equals("I-LOC")) {
                         String word = element.getWord();
@@ -187,7 +136,7 @@ public class NER_extractor {
 
                 while (true) {
                     ci++;
-                    TemplateRow element = elementList.get(ci);
+                    TemplateRow element = rowArrayListList.get(ci);
                     String chunk = element.getChunk();
                     if (chunk.equals("I-PER")) {
                         String word = element.getWord();
@@ -204,7 +153,7 @@ public class NER_extractor {
 
                 while (true) {
                     ci++;
-                    TemplateRow element = elementList.get(ci);
+                    TemplateRow element = rowArrayListList.get(ci);
                     String chunk = element.getChunk();
                     if (chunk.equals("I-ORG")) {
                         String word = element.getWord();
@@ -218,58 +167,49 @@ public class NER_extractor {
 
         // Hash word and frequency of word
         // Hashing Organisation
-        Map<String, Integer> orgMap = new HashMap<String, Integer>();
+        Map<String, Integer> orgMap = new HashMap<>();
 
         for (String temp : orgList) {
             Integer count = orgMap.get(temp);
-            orgMap.put(temp, (count == null) ? 1 : count + 1);
+            orgMap.put(temp, (count == 0) ? 1 : count + 1);
         }
 
         // Hashing Location
-        Map<String, Integer> locMap = new HashMap<String, Integer>();
+        Map<String, Integer> locMap = new HashMap<>();
 
         for (String temp : locList) {
             Integer count = locMap.get(temp);
-            locMap.put(temp, (count == null) ? 1 : count + 1);
+            locMap.put(temp, (count == 0) ? 1 : count + 1);
         }
 
         // Hashing Person
-        Map<String, Integer> perMap = new HashMap<String, Integer>();
+        Map<String, Integer> perMap = new HashMap<>();
 
         for (String temp : perList) {
             Integer count = perMap.get(temp);
-            perMap.put(temp, (count == null) ? 1 : count + 1);
+            perMap.put(temp, (count == 0) ? 1 : count + 1);
         }
 
-        // Print out Sorted Maps
-        // Print sorted Organisations
+        // Sort dictionaries by keys, printing out sorted dictionaries
 
+        String outputPath = "./test_files/final.txt";
         PrintWriter pw = new PrintWriter(outputPath);
-//        for (TemplateRow element : elementList) {
-//            pw.println(element.word + "\t" + element.tag + "\t" + element.chunk);
-
 
         pw.println("Location:");
         Map<String, Integer> locTreemap = new TreeMap<>(locMap);
-        for (Map.Entry<String, Integer> entry : locTreemap.entrySet()) {
-            pw.println("\t" + entry.getKey()+" : "+entry.getValue());
-        }
+        printTreeMap(locTreemap, pw);
         pw.println("\n");
 
 
         pw.println("Organisation:");
         Map<String, Integer> orgTreemap = new TreeMap<>(orgMap);
-        for (Map.Entry<String, Integer> entry : orgTreemap.entrySet()) {
-            pw.println("\t" + entry.getKey()+" : "+entry.getValue());
-        }
+        printTreeMap(orgTreemap, pw);
         pw.println("\n");
 
 
         pw.println("Person:");
         Map<String, Integer> perTreemap = new TreeMap<>(perMap);
-        for (Map.Entry<String, Integer> entry : perTreemap.entrySet()) {
-            pw.println("\t" + entry.getKey()+" : "+entry.getValue());
-        }
+        printTreeMap(perTreemap, pw);
         pw.close();
 
     }
@@ -277,18 +217,21 @@ public class NER_extractor {
     public static void main(String[] args) throws IOException {
 
 
-//        String para = TestLabeler.readFile("./test_files/testSet.txt");
-//        Chunker chunker = new Chunker();
-//        Chunker.Chunking chunks = chunker.process(para, 1);
-//        ArrayList<TemplateRow> elementList = createElementList(chunks);
-//
-//        writeToFile(elementList, "./test_files/output_labeled_test.txt"); // Writing the elementList to a file formatted for CRF++
-//
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        String para = TestLabeler.readFile("./test_files/testSet.txt");
+        Chunker chunker = new Chunker();
+        Chunker.Chunking chunks = chunker.process(para, 1);
+        ArrayList<TemplateRow> elementList = createRowList(chunks);
+
+        writeToFile(elementList, "./test_files/output_labeled_test.txt"); // Writing the elementList to a file formatted for CRF++
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
 //        ArrayList<TemplateRow> loadedTemplateRowList = loadData("./test_files/after_test.txt");
 //        clusterTemplateRows(loadedTemplateRowList);
 
-        ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files/after_test.txt");
-        clusterTemplateRows(loadedTemplateRowList);
+        ///////////////////////////////////////////////////////////////////////////////////////////
+//        ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files/after_test.txt");
+//        clusterTemplateRows(loadedTemplateRowList);
 
 
     }

@@ -3,6 +3,7 @@
     <words>
       <w>chunker</w>
       <w>taggings</w>
+      <w>treemap</w>
     </words>
   </dictionary>
 </component>
