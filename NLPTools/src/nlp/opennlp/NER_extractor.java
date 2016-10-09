@@ -11,47 +11,46 @@ public class NER_extractor {
 
     public static String outputPath = "./test_files/final.txt";
 
-    public static ArrayList<TemplateRow> loadData(String filepath) {
-        ArrayList<TemplateRow> elementList = new ArrayList<>();
-
-        BufferedReader bufferedReader = null;
-        try {
-            bufferedReader = new BufferedReader(new FileReader(filepath));
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                String[] strings = line.split("\t");
-
-                // Felipe	NC	B-PER	B-PER
-                if (strings.length != 4)
-                    continue;
-
-
-
-                String word = strings[0];
-                String tag = strings[1];
-                String predicted_chunk = strings[3];
-
-                TemplateRow element = new TemplateRow(word, tag);
-                element.setChunk(predicted_chunk);
-
-                elementList.add(element);
-                //System.out.println(linearr[0] + " " + linearr[1] + " " + linearr[2]);
-
-                bufferedReader.close();
-        }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        return elementList;
-    }
+//    public static ArrayList<TemplateRow> loadData(String filepath) {
+//        ArrayList<TemplateRow> elementList = new ArrayList<>();
+//
+//        BufferedReader bufferedReader = null;
+//        try {
+//            bufferedReader = new BufferedReader(new FileReader(filepath));
+//            String line;
+//            while ((line = bufferedReader.readLine()) != null) {
+//                String[] strings = line.split("\t");
+//
+//                // Felipe	NC	B-PER	B-PER
+//                if (strings.length != 4)
+//                    continue;
+//
+//
+//
+//                String word = strings[0];
+//                String tag = strings[1];
+//                String predicted_chunk = strings[3];
+//
+//                TemplateRow element = new TemplateRow(word, tag);
+//                element.setChunk(predicted_chunk);
+//
+//                elementList.add(element);
+//                //System.out.println(linearr[0] + " " + linearr[1] + " " + linearr[2]);
+//
+//                bufferedReader.close();
+//        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//        return elementList;
+//    }
 
     public static ArrayList<TemplateRow> load_data(String inputPath) {
         File file = new File(inputPath);
-        String body = "";
         ArrayList<TemplateRow> elementList = new ArrayList<>();
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
@@ -69,10 +68,10 @@ public class NER_extractor {
 
                     String predicted_chunk = strings[3];
 
-                    TemplateRow element = new TemplateRow(word, tag);
-                    element.setChunk(predicted_chunk);
+                    TemplateRow row = new TemplateRow(word, tag);
+                    row.setChunk(predicted_chunk);
 
-                    elementList.add(element);
+                    elementList.add(row);
                 }
 
                 scanner.close();
@@ -252,29 +251,25 @@ public class NER_extractor {
 
         pw.println("Location:");
         Map<String, Integer> locTreemap = new TreeMap<>(locMap);
-        Object[] l = locTreemap.entrySet().toArray();
-        for (Object e : l) {
-            pw.println("\t" + ((Map.Entry<String, Integer>) e).getKey() + " : " + ((Map.Entry<String, Integer>) e).getValue());
+        for (Map.Entry<String, Integer> entry : locTreemap.entrySet()) {
+            pw.println("\t" + entry.getKey()+" : "+entry.getValue());
         }
         pw.println("\n");
 
 
         pw.println("Organisation:");
         Map<String, Integer> orgTreemap = new TreeMap<>(orgMap);
-        Object[] o = orgTreemap.entrySet().toArray();
-        for (Object e : o) {
-            pw.println("\t" + ((Map.Entry<String, Integer>) e).getKey() + " : " + ((Map.Entry<String, Integer>) e).getValue());
+        for (Map.Entry<String, Integer> entry : orgTreemap.entrySet()) {
+            pw.println("\t" + entry.getKey()+" : "+entry.getValue());
         }
         pw.println("\n");
 
 
         pw.println("Person:");
         Map<String, Integer> perTreemap = new TreeMap<>(perMap);
-        Object[] p = perTreemap.entrySet().toArray();
-        for (Object e : p) {
-            pw.println("\t" + ((Map.Entry<String, Integer>) e).getKey() + " : " + ((Map.Entry<String, Integer>) e).getValue());
+        for (Map.Entry<String, Integer> entry : perTreemap.entrySet()) {
+            pw.println("\t" + entry.getKey()+" : "+entry.getValue());
         }
-//        }
         pw.close();
 
     }
@@ -288,7 +283,7 @@ public class NER_extractor {
 //        ArrayList<TemplateRow> elementList = createElementList(chunks);
 //
 //        writeToFile(elementList, "./test_files/output_labeled_test.txt"); // Writing the elementList to a file formatted for CRF++
-
+//
 //        ArrayList<TemplateRow> loadedTemplateRowList = loadData("./test_files/after_test.txt");
 //        clusterTemplateRows(loadedTemplateRowList);
 

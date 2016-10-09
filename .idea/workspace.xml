@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64614edb-089a-4b51-b0ea-55cac19d251c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NER_result.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_file" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_file2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/model_file2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/predicted2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/NERapp.class" afterPath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/NERapp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/TestLabeler.class" afterPath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/TestLabeler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Chunker.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Chunker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmd.sh" afterPath="$PROJECT_DIR$/cmd.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/predicted.txt" afterPath="$PROJECT_DIR$/predicted.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template_files/template_explanation.txt" afterPath="$PROJECT_DIR$/template_files/template_explanation.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" />
     </list>
     <ignored path="NER-6490.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,8 +69,8 @@
       <file leaf-file-name="NER_extractor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+            <state relative-caret-position="194">
+              <caret line="255" column="9" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -834,12 +819,12 @@
       <workItem from="1475893127196" duration="8422000" />
       <workItem from="1475917724258" duration="4504000" />
       <workItem from="1475993192330" duration="763000" />
-      <workItem from="1476003868454" duration="6810000" />
+      <workItem from="1476003868454" duration="7364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40819000" />
+    <option name="totallyTimeSpent" value="41373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1241,8 +1226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        <state relative-caret-position="194">
+          <caret line="255" column="9" selection-start-line="255" selection-start-column="9" selection-end-line="255" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
