@@ -10,7 +10,7 @@ import java.util.*;
 public class NER_extractor {
 
 
-    private static ArrayList<TemplateRow> load_data(String inputPath) {
+    public static ArrayList<TemplateRow> load_data(String inputPath) {
         File file = new File(inputPath);
         ArrayList<TemplateRow> elementList = new ArrayList<>();
 
@@ -47,52 +47,6 @@ public class NER_extractor {
 
     }
 
-    private static ArrayList<TemplateRow> createRowList(Chunker.Chunking chunkedData) {
-
-        ArrayList<TemplateRow> rowArrayList = new ArrayList<>();
-
-        String[][] tokens = chunkedData._tokens;
-        String[][][] taggings = chunkedData._taggings;
-        ArrayList<ArrayList<ArrayList<String>>> chunkLabels = chunkedData._chunkLabels;
-
-        // Adding word and its corresponding tag tag to each row
-        for (int si = 0; si < tokens.length; si++) {
-            String[] sentence = tokens[si];
-            for (int wi = 0; wi < sentence.length; wi++) {
-                String word = sentence[wi];
-                if (!word.equals(".")) {
-                    String tag = taggings[si][0][wi];
-                    TemplateRow row = new TemplateRow(word, tag);
-                    rowArrayList.add(row);
-                }
-
-            }
-        }
-
-        // Adding chunkable to row
-        int elementIndex = 0;
-        for (ArrayList<ArrayList<String>> chunkSentence : chunkLabels) {
-            for (ArrayList<String> chunkWordGroup : chunkSentence) {
-                for (String chunk : chunkWordGroup) {
-                    TemplateRow element = rowArrayList.get(elementIndex);
-                    element.setChunk(chunk);
-                    elementIndex++;
-                }
-            }
-        }
-
-        return rowArrayList;
-
-    }
-
-    private static void writeToFile(ArrayList<TemplateRow> elementList, String filepath) throws IOException {
-        PrintWriter pw = new PrintWriter(filepath);
-        for (TemplateRow element : elementList) {
-            pw.println(element.word + "\t" + element.tag + "\t" + element.chunk);
-        }
-        pw.close();
-
-    }
 
     private static void printTreeMap(Map<String, Integer> map, PrintWriter pw) {
 
@@ -102,10 +56,12 @@ public class NER_extractor {
 
     }
 
-    private static void clusterTemplateRows(ArrayList<TemplateRow> rowArrayListList) throws FileNotFoundException {
+    public static void clusterTemplateRows(ArrayList<TemplateRow> rowArrayListList, String outputPath) throws FileNotFoundException {
         ArrayList<String> perList = new ArrayList<>();
         ArrayList<String> locList = new ArrayList<>();
         ArrayList<String> orgList = new ArrayList<>();
+        ArrayList<String> miscList = new ArrayList<>();
+
 
         for (int i = 0; i < rowArrayListList.size(); i++) {
             TemplateRow rootTemplateRow = rowArrayListList.get(i);
@@ -163,6 +119,23 @@ public class NER_extractor {
                 }
                 orgList.add(wordarr);
             }
+
+            if (rootChunk.equals("B-MISC")) {
+                int ci = i;
+                String wordarr = rootWord;
+
+                while (true) {
+                    ci++;
+                    TemplateRow element = rowArrayListList.get(ci);
+                    String chunk = element.getChunk();
+                    if (chunk.equals("I-MISC")) {
+                        String word = element.getWord();
+                        wordarr = wordarr + " " + word;
+                    } else
+                        break;
+                }
+                miscList.add(wordarr);
+            }
         }
 
         // Hash word and frequency of word
@@ -171,7 +144,7 @@ public class NER_extractor {
 
         for (String temp : orgList) {
             Integer count = orgMap.get(temp);
-            orgMap.put(temp, (count == 0) ? 1 : count + 1);
+            orgMap.put(temp, (count == null) ? 1 : count + 1);
         }
 
         // Hashing Location
@@ -179,7 +152,7 @@ public class NER_extractor {
 
         for (String temp : locList) {
             Integer count = locMap.get(temp);
-            locMap.put(temp, (count == 0) ? 1 : count + 1);
+            locMap.put(temp, (count == null) ? 1 : count + 1);
         }
 
         // Hashing Person
@@ -187,17 +160,28 @@ public class NER_extractor {
 
         for (String temp : perList) {
             Integer count = perMap.get(temp);
-            perMap.put(temp, (count == 0) ? 1 : count + 1);
+            perMap.put(temp, (count == null) ? 1 : count + 1);
+        }
+
+        Map<String, Integer> miscMap = new HashMap<>();
+
+        for (String temp : miscList) {
+            Integer count = miscMap.get(temp);
+            miscMap.put(temp, (count == null) ? 1 : count + 1);
         }
 
         // Sort dictionaries by keys, printing out sorted dictionaries
 
-        String outputPath = "./test_files/final.txt";
         PrintWriter pw = new PrintWriter(outputPath);
 
         pw.println("Location:");
         Map<String, Integer> locTreemap = new TreeMap<>(locMap);
         printTreeMap(locTreemap, pw);
+        pw.println("\n");
+
+        pw.println("Miscellaneous:");
+        Map<String, Integer> miscTreemap = new TreeMap<>(miscMap);
+        printTreeMap(miscTreemap, pw);
         pw.println("\n");
 
 
@@ -216,22 +200,11 @@ public class NER_extractor {
 
     public static void main(String[] args) throws IOException {
 
+        String outputPath = "./test_files_final/final1.txt";
 
         ///////////////////////////////////////////////////////////////////////////////////////////
-        String para = TestLabeler.readFile("./test_files/testSet.txt");
-        Chunker chunker = new Chunker();
-        Chunker.Chunking chunks = chunker.process(para, 1);
-        ArrayList<TemplateRow> elementList = createRowList(chunks);
-
-        writeToFile(elementList, "./test_files/output_labeled_test.txt"); // Writing the elementList to a file formatted for CRF++
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
-//        ArrayList<TemplateRow> loadedTemplateRowList = loadData("./test_files/after_test.txt");
-//        clusterTemplateRows(loadedTemplateRowList);
-
-        ///////////////////////////////////////////////////////////////////////////////////////////
-//        ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files/after_test.txt");
-//        clusterTemplateRows(loadedTemplateRowList);
+        ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files_final/after_test1.txt");
+        clusterTemplateRows(loadedTemplateRowList, outputPath);
 
 
     }

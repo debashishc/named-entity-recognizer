@@ -1,0 +1,16 @@
+CRF++: Yet Another CRF Tool Kit
+Copyright (C) 2005-2013 Taku Kudo, All rights reserved.
+
+Usage: crf_learn [options] files
+ -f, --freq=INT              use features that occuer no less than INT(default 1)
+ -m, --maxiter=INT           set INT for max iterations in LBFGS routine(default 10k)
+ -c, --cost=FLOAT            set FLOAT for cost parameter(default 1.0)
+ -e, --eta=FLOAT             set FLOAT for termination criterion(default 0.0001)
+ -C, --convert               convert text model to binary model
+ -t, --textmodel             build also text model file for debugging
+ -a, --algorithm=(CRF|MIRA)  select training algorithm
+ -p, --thread=INT            number of threads (default auto-detect)
+ -H, --shrinking-size=INT    set INT for number of iterations variable needs to  be optimal before considered for shrinking. (default 20)
+ -v, --version               show the version and exit
+ -h, --help                  show this help and exit
+

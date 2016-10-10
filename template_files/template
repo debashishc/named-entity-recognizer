@@ -23,43 +23,39 @@ U04:%x[2,0]
 #part_of_speech
 U05:%x[0,1]
 
-# previos part_of_speech
+# prev POS
 U06:%x[-1,1]
 
-# next part_of_speech
+# next POS
 U07:%x[1,1]
 
-#####################################################
+# previous previous POS
+U10:%x[-2,1]
 
-#chunk tag, 0 for nothing
-#U08:%x[0,2]
+# next next POS
+U11:%x[2,1]
 
-#previous chunk
-#U09:%x[-1,2]
-
-#next chunk
-#U10:%x[1,2]
 
 #####################################################
 
 # prev word/ word
-U07:%x[-1,0]/%x[0,0]
+U12:%x[-1,0]/%x[0,0]
 
 # word/part_of_speech
-U08:%x[0,0]/%x[1,0]
-
-#prev POS / POS
-U09:%x[-1,1]/%x[0,1]
+U13:%x[0,0]/%x[1,0]
 
 #####################################################
 
+# prev prev POS/ prev POS/ current POS
+U14:%x[-2,1]/%x[-1,1]/%x[0,1]
 
-# prev word/word/next word
-U10:%x[-1,0]/%x[0,0]/%x[1,0]
+# prev POS/ current POS/ next POS
+U15:%x[-1,1]/%x[0,1]/%x[1,1]
 
-# prev POS/POS/next POS
-U11:%x[-1,1]/%x[0,1]/%x[1,1]
+#POS/ next POS/ next next POS
+U16:%x[0,1]/%x[1,1]/%x[2,1]
 
+#####################################################
 
 #bigram - automatically create all bigram features
 B

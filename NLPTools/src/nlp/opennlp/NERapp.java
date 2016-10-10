@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  * @author Debashish Chakraborty
@@ -57,7 +58,8 @@ public class NERapp {
 
     private static void display(String s, HashMap<String, Integer> hm, BufferedWriter bw) throws IOException {
         bw.write(s + "\n");
-        for (Map.Entry<String, Integer> entry : hm.entrySet()) {
+        Map<String, Integer> treeMap = new TreeMap<>();
+        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue().toString();
             bw.write("\t" + key + "\t" + value + "\n");
@@ -114,6 +116,9 @@ public class NERapp {
         display("Misc", misc, bw);
 
         bw.close();
+
+
+
 
     }
 

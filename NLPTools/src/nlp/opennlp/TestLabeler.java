@@ -67,7 +67,7 @@ public class TestLabeler {
                 for (int ti = 0; ti < _taggings[si].length; ti++) {
                     for (int wi = 0; wi < _taggings[si][ti].length; wi++) {
                         bufferedWriter.write(_tokens[si][wi] + "\t\t");
-                        bufferedWriter.write(_taggings[si][ti][wi] + "\t\t" + "O" + "\n");
+                        bufferedWriter.write(_taggings[si][ti][wi] + "\t\t" + "null" + "\n");
                     }
                 }
                 bufferedWriter.write("\n");
@@ -79,10 +79,14 @@ public class TestLabeler {
 
     public static void main(String[] args) throws IOException {
 
-        String inputPath = "./test_files/testSet.txt";
-        // todo: change it to ".test" file before testing later
-        String outputPath = "./test_files/labeled_test.txt";
+//        String inputPath = "./test_files_copy/testSet.txt";
+//        // todo: change it to ".test" file before testing later
+//        String outputPath = "./test_files_copy/labeled_test.txt";
 
+
+        String inputPath = "./test_files_final/testSet.txt";
+        // todo: change it to ".test" file before testing later
+        String outputPath = "./test_files_final/labeled_test.txt";
 //        System.out.println(new File(".").getCanonicalPath());
 
         String body = readFile(inputPath);
