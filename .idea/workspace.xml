@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64614edb-089a-4b51-b0ea-55cac19d251c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conll2002/esp.train_1" afterPath="$PROJECT_DIR$/conll2002/esp.train_1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conll2002/esp.train_2" afterPath="$PROJECT_DIR$/conll2002/esp.train_2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conll2002/esp.train_3" afterPath="$PROJECT_DIR$/conll2002/esp.train_3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/NER_extractor.class" afterPath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/NER_extractor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/Resizer.class" afterPath="$PROJECT_DIR$/out/production/NLPTools/nlp/opennlp/Resizer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmd.sh" afterPath="$PROJECT_DIR$/cmd.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template_files/template" afterPath="$PROJECT_DIR$/template_files/template" />
     </list>
     <ignored path="NER-6490.iws" />
@@ -32,8 +35,8 @@
       <file leaf-file-name="SentenceExtractor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SentenceExtractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="465">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -42,7 +45,7 @@
       <file leaf-file-name="TestLabeler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="1035">
               <caret line="69" column="83" selection-start-line="69" selection-start-column="83" selection-end-line="69" selection-end-column="83" />
               <folding />
             </state>
@@ -52,8 +55,8 @@
       <file leaf-file-name="NER_extractor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2281">
-              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="405">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,8 +77,8 @@
       <file leaf-file-name="Resizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="551">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,41 +89,11 @@
       <file leaf-file-name="NERapp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="1740">
               <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TemplateRow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TemplateRow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SharedPOSTagger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SharedPOSTagger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="POSTagger.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/POSTagger.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -142,6 +115,9 @@
       <projects_view />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -154,10 +130,10 @@
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Row.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TemplateRow.java" />
-        <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Chunker.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" />
+        <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" />
       </list>
     </option>
@@ -197,7 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -255,6 +230,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -266,7 +242,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Application.NER_extractor">
+  <component name="RunManager" selected="Application.Resizer">
     <configuration default="false" name="TestLabeler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -275,26 +251,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="nlp.opennlp.TestLabeler" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="NLPTools" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="NER" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="nlp.opennlp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="nlp.opennlp.NER" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -355,6 +311,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="nlp.opennlp.Chunker" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="NLPTools" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SentenceExtractor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="nlp.opennlp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="nlp.opennlp.SentenceExtractor" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -783,18 +759,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.TestLabeler" />
-      <item index="1" class="java.lang.String" itemvalue="Application.NER" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Resizer" />
-      <item index="3" class="java.lang.String" itemvalue="Application.NER_extractor" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Chunker" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Resizer" />
+      <item index="2" class="java.lang.String" itemvalue="Application.NER_extractor" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Chunker" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SentenceExtractor" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.NER_extractor" />
-        <item index="1" class="java.lang.String" itemvalue="Application.TestLabeler" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Chunker" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Resizer" />
-        <item index="4" class="java.lang.String" itemvalue="Application.NER" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Resizer" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SentenceExtractor" />
+        <item index="2" class="java.lang.String" itemvalue="Application.NER_extractor" />
+        <item index="3" class="java.lang.String" itemvalue="Application.TestLabeler" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Chunker" />
       </list>
     </recent_temporary>
   </component>
@@ -821,12 +797,13 @@
       <workItem from="1475917724258" duration="4504000" />
       <workItem from="1475993192330" duration="763000" />
       <workItem from="1476003868454" duration="9192000" />
-      <workItem from="1476053298276" duration="4326000" />
+      <workItem from="1476053298276" duration="6365000" />
+      <workItem from="1476242354867" duration="300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47527000" />
+    <option name="totallyTimeSpent" value="49866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -834,12 +811,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32669324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1992032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1992032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -849,12 +825,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17812197" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17795485" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32669324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1122,27 +1099,11 @@
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/PaxHeader/opennlp" />
     <entry file="file://$PROJECT_DIR$/NLPTools/src/PaxHeader/nlp" />
     <entry file="file://$PROJECT_DIR$/NLPTools/src/PaxHeader/util" />
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/POSTagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/dsa.java" />
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SentenceExtractor.java">
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SentenceTokenizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SharedPOSTagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
           <folding />
         </state>
       </provider>
@@ -1155,18 +1116,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SentenceTokenizer.java">
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SharedPOSTagger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+        <state relative-caret-position="225">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/POSTagger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="1740">
           <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/SentenceExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="83" selection-start-line="69" selection-start-column="83" selection-end-line="69" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1181,28 +1176,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="69" column="83" selection-start-line="69" selection-start-column="83" selection-end-line="69" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2281">
-          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+        <state relative-caret-position="405">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

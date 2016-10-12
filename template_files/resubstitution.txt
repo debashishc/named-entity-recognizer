@@ -1,0 +1,89 @@
+
+
+# 1/4 size - testb
+processed 47696 tokens with 3877 phrases; found: 3611 phrases; correct: 2162.
+accuracy:  93.55%; precision:  59.87%; recall:  55.76%; FB1:  57.75
+              LOC: precision:  51.38%; recall:  65.53%; FB1:  57.60  1121
+             MISC: precision:  36.96%; recall:  13.42%; FB1:  19.69  138
+              ORG: precision:  61.31%; recall:  62.69%; FB1:  61.99  1543
+              PER: precision:  72.81%; recall:  53.11%; FB1:  61.42  809
+
+
+
+# 1/2 size - testb
+processed 47696 tokens with 3877 phrases; found: 3617 phrases; correct: 2303.
+accuracy:  94.23%; precision:  63.67%; recall:  59.40%; FB1:  61.46
+              LOC: precision:  53.83%; recall:  71.90%; FB1:  61.57  1174
+             MISC: precision:  46.59%; recall:  21.58%; FB1:  29.50  176
+              ORG: precision:  68.00%; recall:  61.83%; FB1:  64.77  1372
+              PER: precision:  73.30%; recall:  59.15%; FB1:  65.47  895
+
+
+
+
+# 3/4 size - testb
+processed 47696 tokens with 3877 phrases; found: 3614 phrases; correct: 2375.
+accuracy:  94.61%; precision:  65.72%; recall:  61.26%; FB1:  63.41
+              LOC: precision:  54.84%; recall:  74.18%; FB1:  63.06  1189
+             MISC: precision:  46.05%; recall:  27.63%; FB1:  34.54  228
+              ORG: precision:  70.92%; recall:  61.90%; FB1:  66.10  1317
+              PER: precision:  77.73%; recall:  61.68%; FB1:  68.78  880
+
+
+
+# full size - testb
+processed 47696 tokens with 3877 phrases; found: 3655 phrases; correct: 2636.
+accuracy:  95.42%; precision:  72.12%; recall:  67.99%; FB1:  69.99
+              LOC: precision:  65.94%; recall:  76.22%; FB1:  70.71  1016
+             MISC: precision:  55.37%; recall:  35.26%; FB1:  43.09  242
+              ORG: precision:  73.41%; recall:  70.97%; FB1:  72.17  1459
+              PER: precision:  81.13%; recall:  68.62%; FB1:  74.35  938
+
+
+# 1/4 size - testa
+processed 46167 tokens with 3076 phrases; found: 2935 phrases; correct: 1921.
+accuracy:  95.57%; precision:  65.45%; recall:  62.45%; FB1:  63.92
+              LOC: precision:  70.44%; recall:  66.04%; FB1:  68.17  900
+             MISC: precision:  45.28%; recall:  18.39%; FB1:  26.16  106
+              ORG: precision:  61.02%; recall:  68.71%; FB1:  64.64  1375
+              PER: precision:  72.20%; recall:  63.09%; FB1:  67.34  554
+
+
+
+# 1/2 size - testa
+processed 46167 tokens with 3076 phrases; found: 2921 phrases; correct: 2016.
+accuracy:  95.98%; precision:  69.02%; recall:  65.54%; FB1:  67.23
+              LOC: precision:  71.92%; recall:  69.90%; FB1:  70.89  933
+             MISC: precision:  51.24%; recall:  23.75%; FB1:  32.46  121
+              ORG: precision:  66.40%; recall:  68.63%; FB1:  67.50  1262
+              PER: precision:  73.55%; recall:  70.19%; FB1:  71.83  605
+
+
+
+# 3/4 size - testa
+processed 46167 tokens with 3076 phrases; found: 2938 phrases; correct: 2129.
+accuracy:  96.42%; precision:  72.46%; recall:  69.21%; FB1:  70.80
+              LOC: precision:  74.04%; recall:  72.50%; FB1:  73.26  940
+             MISC: precision:  60.00%; recall:  34.48%; FB1:  43.80  150
+              ORG: precision:  71.69%; recall:  71.74%; FB1:  71.72  1222
+              PER: precision:  74.60%; recall:  73.66%; FB1:  74.13  626
+
+
+# full size - testa
+processed 46167 tokens with 3076 phrases; found: 2941 phrases; correct: 2193.
+accuracy:  96.71%; precision:  74.57%; recall:  71.29%; FB1:  72.89
+              LOC: precision:  79.05%; recall:  71.15%; FB1:  74.89  864
+             MISC: precision:  59.88%; recall:  39.46%; FB1:  47.58  172
+              ORG: precision:  73.60%; recall:  77.40%; FB1:  75.45  1284
+              PER: precision:  74.40%; recall:  72.87%; FB1:  73.63  621
+
+
+##################################################################################################
+
+# resubstitution
+
+accuracy:  99.90%; precision:  99.16%; recall:  99.01%; FB1:  99.09
+              LOC: precision:  98.83%; recall:  98.85%; FB1:  98.84  4434
+             MISC: precision:  99.53%; recall:  97.57%; FB1:  98.54  1691
+              ORG: precision:  98.89%; recall:  99.11%; FB1:  99.00  6393
+              PER: precision:  99.85%; recall:  99.67%; FB1:  99.76  3887

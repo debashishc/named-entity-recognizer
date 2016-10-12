@@ -12,7 +12,7 @@ public class NER_extractor {
 
     public static ArrayList<TemplateRow> load_data(String inputPath) {
         File file = new File(inputPath);
-        ArrayList<TemplateRow> elementList = new ArrayList<>();
+        ArrayList<TemplateRow> rowArrayList = new ArrayList<>();
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
             String line = bufferedReader.readLine();
@@ -30,7 +30,7 @@ public class NER_extractor {
                     TemplateRow row = new TemplateRow(word, tag);
                     row.setChunk(predicted_chunk);
 
-                    elementList.add(row);
+                    rowArrayList.add(row);
                 }
 
                 scanner.close();
@@ -43,15 +43,15 @@ public class NER_extractor {
             System.out.println("The specified file cannot be found.");
         }
 
-        return elementList;
+        return rowArrayList;
 
     }
 
 
-    private static void printTreeMap(Map<String, Integer> map, PrintWriter pw) {
+    private static void printTreeMap(Map<String, Integer> treeMap, PrintWriter printWriter) {
 
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            pw.println("\t" + entry.getKey() + " : " + entry.getValue());
+        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+            printWriter.println("\t" + entry.getKey() + " : " + entry.getValue());
         }
 
     }
@@ -202,7 +202,6 @@ public class NER_extractor {
 
         String outputPath = "./test_files_final/final1.txt";
 
-        ///////////////////////////////////////////////////////////////////////////////////////////
         ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files_final/after_test1.txt");
         clusterTemplateRows(loadedTemplateRowList, outputPath);
 
