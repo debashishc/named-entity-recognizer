@@ -6,6 +6,11 @@ import java.util.*;
 /**
  * @author Debashish Chakraborty
  * @version 1.0
+ *
+ * Displays all unique recognized named entities (one entity per line) and their frequencies after
+ * 1) organising them alphabetically first with respect to the NER tag and then with respect to the extracted text,
+ * 2) counting the frequency of each unique NER-text line, and
+ * 3) removing duplicates
  */
 public class NER_extractor {
 
@@ -41,7 +46,6 @@ public class NER_extractor {
         } catch (IOException ie) {
             System.out.println("The specified file cannot be found.");
         }
-//        System.out.println(rowArrayList);
         return rowArrayList;
 
     }
@@ -64,29 +68,6 @@ public class NER_extractor {
 
     }
 
-//    public static ArrayList<String> extractWordlistOnFeature(String rootChunk, String rootWord, String chunk, int index){
-//        ArrayList<String> list = new ArrayList<>();
-//
-//        if (rootChunk.equals("B-"+chunk)) {
-//            int ci = index;
-//            String words = rootWord;
-//
-//            while (true) {
-//                ci++;
-//                TemplateRow row = rowArrayList.get(ci);
-//                String word_chunk = row.getChunk();
-//                if (word_chunk.equals("I-"+chunk)) {
-//                    String word = row.getWord();
-//                    words = words + " " + word;
-//                } else
-//                    break;
-//            }
-//            list.add(words);
-//        }
-//
-//
-//        return list;
-//    }
 
 
     public static void printWordsToFile(ArrayList<TemplateRow> rowArrayList, String outputPath) throws FileNotFoundException {
@@ -96,23 +77,21 @@ public class NER_extractor {
         ArrayList<String> orgList = new ArrayList<>();
         ArrayList<String> miscList = new ArrayList<>();
 
-        Map<String, ArrayList<String>> map = new HashMap<>();
-        map.put("LOC", locList);
-        map.put("MISC",miscList);
-        map.put("ORG",orgList);
-        map.put("PER",perList);
-
-        List<String> features = Arrays.asList("LOC", "MISC", "ORG", "PER");
+        Map<String, ArrayList<String>> featureMap = new TreeMap<>();
+        featureMap.put("LOC", locList);
+        featureMap.put("MISC",miscList);
+        featureMap.put("ORG",orgList);
+        featureMap.put("PER",perList);
 
         for (int i = 0; i < rowArrayList.size(); i++) {
-            for (int j=0; j<features.size(); j++) {
-                String thisChunk = features.get(j);
+            for (String thisChunk: featureMap.keySet())  {
                 TemplateRow rootTemplateRow = rowArrayList.get(i);
                 String rootWord = rootTemplateRow.getWord();
                 String rootChunk = rootTemplateRow.getChunk();
 
                 // Clustering and joining words based on chunks
-                if (rootChunk.equals("B-"+thisChunk)) {
+                // e.g. check if rootChunk is "B-PER" and then "I-PER"
+                if (rootChunk.equals("B-" + thisChunk)) {
                     int ci = i;
                     String words = rootWord;
 
@@ -120,46 +99,43 @@ public class NER_extractor {
                         ci++;
                         TemplateRow row = rowArrayList.get(ci);
                         String chunk = row.getChunk();
-                        if (chunk.equals("I-"+thisChunk)) {
+                        if (chunk.equals("I-" + thisChunk)) {
                             String word = row.getWord();
                             words = words + " " + word;
                         } else
                             break;
                     }
-                    map.get(thisChunk).add(words);
+                    featureMap.get(thisChunk).add(words);
                 }
             }
         }
 
-//
-
         // Printing out sorted dictionaries
-        PrintWriter pw = new PrintWriter(outputPath);
+        PrintWriter printWriter = new PrintWriter(outputPath);
 
-        pw.println("Location:");
-        printSortedMap(locList, pw);
-        pw.println("\n");
+        printWriter.println("Location:");
+        printSortedMap(locList, printWriter);
+        printWriter.println("\n");
 
-        pw.println("Miscellaneous:");
-        printSortedMap(miscList, pw);
-        pw.println("\n");
+        printWriter.println("Miscellaneous:");
+        printSortedMap(miscList, printWriter);
+        printWriter.println("\n");
 
-        pw.println("Organisation:");
-        printSortedMap(orgList, pw);
-        pw.println("\n");
+        printWriter.println("Organisation:");
+        printSortedMap(orgList, printWriter);
+        printWriter.println("\n");
 
-        pw.println("Person:");
-        printSortedMap(perList, pw);
-        pw.close();
+        printWriter.println("Person:");
+        printSortedMap(perList, printWriter);
+
+        printWriter.close();
 
     }
 
     public static void main(String[] args) throws IOException {
 
-        String outputPath = "./test_files_final/final-edited1.txt";
+        String outputPath = "./test_files_final/final-edited.txt";
         ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files_final/after_test.txt");
         printWordsToFile(loadedTemplateRowList, outputPath);
-
-
     }
 }

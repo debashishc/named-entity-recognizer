@@ -79,15 +79,9 @@ public class TestLabeler {
 
     public static void main(String[] args) throws IOException {
 
-//        String inputPath = "./test_files_copy/testSet.txt";
-//        // todo: change it to ".test" file before testing later
-//        String outputPath = "./test_files_copy/labeled_test.txt";
-
-
         String inputPath = "./test_files_final/testSet.txt";
         // todo: change it to ".test" file before testing later
         String outputPath = "./test_files_final/labeled_test.txt";
-//        System.out.println(new File(".").getCanonicalPath());
 
         String body = readFile(inputPath);
         POSTagger.POSTagging posTagging = tagText(body);

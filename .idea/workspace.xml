@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="64614edb-089a-4b51-b0ea-55cac19d251c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" afterPath="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" />
     </list>
     <ignored path="NER-6490.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,21 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestLabeler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestLabeler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
-              <caret line="69" column="83" selection-start-line="69" selection-start-column="83" selection-end-line="69" selection-end-column="83" />
+            <state relative-caret-position="221">
+              <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NER_extractor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NER_extractor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1860">
-              <caret line="124" column="41" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
+            <state relative-caret-position="2040">
+              <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,9 +126,9 @@
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TemplateRow.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Chunker.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NERapp.java" />
-        <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java" />
         <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java" />
+        <option value="$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java" />
       </list>
     </option>
   </component>
@@ -791,12 +792,12 @@
       <workItem from="1475993192330" duration="763000" />
       <workItem from="1476003868454" duration="9192000" />
       <workItem from="1476053298276" duration="6365000" />
-      <workItem from="1476242354867" duration="5440000" />
+      <workItem from="1476242354867" duration="6753000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55006000" />
+    <option name="totallyTimeSpent" value="56319000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1150,14 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="83" selection-start-line="69" selection-start-column="83" selection-end-line="69" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/Resizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -1178,11 +1171,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/NER_extractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="41" selection-start-line="124" selection-start-column="41" selection-end-line="124" selection-end-column="41" />
+        <state relative-caret-position="2040">
+          <caret line="136" column="60" selection-start-line="136" selection-start-column="60" selection-end-line="136" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NLPTools/src/nlp/opennlp/TestLabeler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="79" column="63" selection-start-line="79" selection-start-column="63" selection-end-line="79" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
