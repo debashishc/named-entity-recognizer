@@ -1,17 +1,10 @@
 Location:
-	Cardiff City : 1
-	Francia : 1
-	Holanda : 1
 
 
 Miscellaneous:
-	Eurocopa de : 1
 
 
 Organisation:
 
 
 Person:
-	Einar Gunnarsson : 1
-	Islandia : 1
-	Lars Lagerbäck : 1

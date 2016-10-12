@@ -24,8 +24,7 @@ public class NER_extractor {
                     String[] strings = scanner.nextLine().split("\t"); // split  on tab
                     String word = strings[0]; // read the word
                     String tag = strings[3]; // read the tag
-
-                    String predicted_chunk = strings[3];
+                    String predicted_chunk = strings[3]; // read the predicted chunk
 
                     TemplateRow row = new TemplateRow(word, tag);
                     row.setChunk(predicted_chunk);
@@ -42,168 +41,124 @@ public class NER_extractor {
         } catch (IOException ie) {
             System.out.println("The specified file cannot be found.");
         }
-
+//        System.out.println(rowArrayList);
         return rowArrayList;
 
     }
 
 
-    private static void printTreeMap(Map<String, Integer> treeMap, PrintWriter printWriter) {
+    //
+    private static void printSortedMap(ArrayList<String> list, PrintWriter printWriter) {
 
+        Map<String, Integer> map = new HashMap<>();
+
+        for (String string : list) {
+            Integer count = map.get(string);
+            map.put(string, (count == null) ? 1 : count + 1);
+        }
+
+        Map<String, Integer> treeMap = new TreeMap<>(map);
         for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
             printWriter.println("\t" + entry.getKey() + " : " + entry.getValue());
         }
 
     }
 
-    public static void clusterTemplateRows(ArrayList<TemplateRow> rowArrayListList, String outputPath) throws FileNotFoundException {
+//    public static ArrayList<String> extractWordlistOnFeature(String rootChunk, String rootWord, String chunk, int index){
+//        ArrayList<String> list = new ArrayList<>();
+//
+//        if (rootChunk.equals("B-"+chunk)) {
+//            int ci = index;
+//            String words = rootWord;
+//
+//            while (true) {
+//                ci++;
+//                TemplateRow row = rowArrayList.get(ci);
+//                String word_chunk = row.getChunk();
+//                if (word_chunk.equals("I-"+chunk)) {
+//                    String word = row.getWord();
+//                    words = words + " " + word;
+//                } else
+//                    break;
+//            }
+//            list.add(words);
+//        }
+//
+//
+//        return list;
+//    }
+
+
+    public static void printWordsToFile(ArrayList<TemplateRow> rowArrayList, String outputPath) throws FileNotFoundException {
+
         ArrayList<String> perList = new ArrayList<>();
         ArrayList<String> locList = new ArrayList<>();
         ArrayList<String> orgList = new ArrayList<>();
         ArrayList<String> miscList = new ArrayList<>();
 
+        Map<String, ArrayList<String>> map = new HashMap<>();
+        map.put("LOC", locList);
+        map.put("MISC",miscList);
+        map.put("ORG",orgList);
+        map.put("PER",perList);
 
-        for (int i = 0; i < rowArrayListList.size(); i++) {
-            TemplateRow rootTemplateRow = rowArrayListList.get(i);
-            String rootWord = rootTemplateRow.getWord();
-            String rootChunk = rootTemplateRow.getChunk();
+        List<String> features = Arrays.asList("LOC", "MISC", "ORG", "PER");
 
-            // CLustering and joining words based on chunks
-            if (rootChunk.equals("B-LOC")) {
-                int ci = i;
-                String wordarr = rootWord;
+        for (int i = 0; i < rowArrayList.size(); i++) {
+            for (int j=0; j<features.size(); j++) {
+                String thisChunk = features.get(j);
+                TemplateRow rootTemplateRow = rowArrayList.get(i);
+                String rootWord = rootTemplateRow.getWord();
+                String rootChunk = rootTemplateRow.getChunk();
 
-                while (true) {
-                    ci++;
-                    TemplateRow element = rowArrayListList.get(ci);
-                    String chunk = element.getChunk();
-                    if (chunk.equals("I-LOC")) {
-                        String word = element.getWord();
-                        wordarr = wordarr + " " + word;
-                    } else
-                        break;
+                // Clustering and joining words based on chunks
+                if (rootChunk.equals("B-"+thisChunk)) {
+                    int ci = i;
+                    String words = rootWord;
+
+                    while (true) {
+                        ci++;
+                        TemplateRow row = rowArrayList.get(ci);
+                        String chunk = row.getChunk();
+                        if (chunk.equals("I-"+thisChunk)) {
+                            String word = row.getWord();
+                            words = words + " " + word;
+                        } else
+                            break;
+                    }
+                    map.get(thisChunk).add(words);
                 }
-                locList.add(wordarr);
-            }
-
-            if (rootChunk.equals("B-PER")) {
-                int ci = i;
-                String wordarr = rootWord;
-
-                while (true) {
-                    ci++;
-                    TemplateRow element = rowArrayListList.get(ci);
-                    String chunk = element.getChunk();
-                    if (chunk.equals("I-PER")) {
-                        String word = element.getWord();
-                        wordarr = wordarr + " " + word;
-                    } else
-                        break;
-                }
-                perList.add(wordarr);
-            }
-
-            if (rootChunk.equals("B-ORG")) {
-                int ci = i;
-                String wordarr = rootWord;
-
-                while (true) {
-                    ci++;
-                    TemplateRow element = rowArrayListList.get(ci);
-                    String chunk = element.getChunk();
-                    if (chunk.equals("I-ORG")) {
-                        String word = element.getWord();
-                        wordarr = wordarr + " " + word;
-                    } else
-                        break;
-                }
-                orgList.add(wordarr);
-            }
-
-            if (rootChunk.equals("B-MISC")) {
-                int ci = i;
-                String wordarr = rootWord;
-
-                while (true) {
-                    ci++;
-                    TemplateRow element = rowArrayListList.get(ci);
-                    String chunk = element.getChunk();
-                    if (chunk.equals("I-MISC")) {
-                        String word = element.getWord();
-                        wordarr = wordarr + " " + word;
-                    } else
-                        break;
-                }
-                miscList.add(wordarr);
             }
         }
 
-        // Hash word and frequency of word
-        // Hashing Organisation
-        Map<String, Integer> orgMap = new HashMap<>();
+//
 
-        for (String temp : orgList) {
-            Integer count = orgMap.get(temp);
-            orgMap.put(temp, (count == null) ? 1 : count + 1);
-        }
-
-        // Hashing Location
-        Map<String, Integer> locMap = new HashMap<>();
-
-        for (String temp : locList) {
-            Integer count = locMap.get(temp);
-            locMap.put(temp, (count == null) ? 1 : count + 1);
-        }
-
-        // Hashing Person
-        Map<String, Integer> perMap = new HashMap<>();
-
-        for (String temp : perList) {
-            Integer count = perMap.get(temp);
-            perMap.put(temp, (count == null) ? 1 : count + 1);
-        }
-
-        Map<String, Integer> miscMap = new HashMap<>();
-
-        for (String temp : miscList) {
-            Integer count = miscMap.get(temp);
-            miscMap.put(temp, (count == null) ? 1 : count + 1);
-        }
-
-        // Sort dictionaries by keys, printing out sorted dictionaries
-
+        // Printing out sorted dictionaries
         PrintWriter pw = new PrintWriter(outputPath);
 
         pw.println("Location:");
-        Map<String, Integer> locTreemap = new TreeMap<>(locMap);
-        printTreeMap(locTreemap, pw);
+        printSortedMap(locList, pw);
         pw.println("\n");
 
         pw.println("Miscellaneous:");
-        Map<String, Integer> miscTreemap = new TreeMap<>(miscMap);
-        printTreeMap(miscTreemap, pw);
+        printSortedMap(miscList, pw);
         pw.println("\n");
-
 
         pw.println("Organisation:");
-        Map<String, Integer> orgTreemap = new TreeMap<>(orgMap);
-        printTreeMap(orgTreemap, pw);
+        printSortedMap(orgList, pw);
         pw.println("\n");
 
-
         pw.println("Person:");
-        Map<String, Integer> perTreemap = new TreeMap<>(perMap);
-        printTreeMap(perTreemap, pw);
+        printSortedMap(perList, pw);
         pw.close();
 
     }
 
     public static void main(String[] args) throws IOException {
 
-        String outputPath = "./test_files_final/final1.txt";
-
-        ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files_final/after_test1.txt");
-        clusterTemplateRows(loadedTemplateRowList, outputPath);
+        String outputPath = "./test_files_final/final-edited1.txt";
+        ArrayList<TemplateRow> loadedTemplateRowList = load_data("./test_files_final/after_test.txt");
+        printWordsToFile(loadedTemplateRowList, outputPath);
 
 
     }
