@@ -10,6 +10,7 @@ public class TestLabeler {
 
     /**
      * Reads the content of the file and returns a string object containing the body of the text
+     * Label a new test set as instructed by Steps 7-9 on the lecture slides
      *
      * @param inputPath input file path
      * @return the text of the file
